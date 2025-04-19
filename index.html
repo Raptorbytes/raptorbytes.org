@@ -3,65 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="raptorbytes.org — fun projects, memes & more.">
+    <meta name="description" content="Welcome to Raptor Bytes, your source for fun, memes, and tech.">
     <title>raptorbytes.org</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background: #0f0f0f;
             color: #ffffff;
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: 'IBM Plex Sans Mono', monospace;
+            text-align: center;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             height: 100vh;
-            flex-direction: column;
         }
+
         h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin: 0.2em 0;
             font-weight: 600;
         }
-        p {
-            margin: 0.5em 0 2em;
-            font-size: 1.2em;
-            color: #ccc;
+
+        .button-container {
+            margin-top: 30px;
         }
-        .button-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .button-group a {
+
+        .button {
             display: inline-block;
-            padding: 12px 24px;
-            background: #1e1e1e;
-            color: #4fc3f7;
-            text-decoration: none;
-            border: 2px solid #4fc3f7;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: all 0.2s ease;
-        }
-        .button-group a:hover {
-            background: #4fc3f7;
+            padding: 15px 30px;
+            background-color: #4fc3f7;
             color: #0f0f0f;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1e1e1e;
+            transform: scale(1.05);
+        }
+
+        /* Mobile and tablet styles */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 3em;  /* Smaller title on smaller screens */
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 25px;
+                margin: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 2.5em;  /* Further reduce title size for very small screens */
+            }
+            .button {
+                font-size: 0.9em;
+                padding: 10px 20px;
+                margin: 5px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>raptorbytes.org</h1>
-    <p>Welcome to my corner of the web.</p>
+    <h1>Welcome to Raptor Bytes</h1>
 
-    <div class="button-group">
-        <a href="https://memes.raptorbytes.org">Memes</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
+    <div class="button-container">
+        <a href="/memes" class="button">View Memes</a>
+        <a href="/about" class="button">About Us</a>
+        <a href="/contact" class="button">Contact</a>
     </div>
 </body>
 </html>
