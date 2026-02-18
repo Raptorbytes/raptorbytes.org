@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAPTORBYTES.ORG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --raptor-purple: #60269e; }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: "Courier New", Courier, monospace;
+            image-rendering: pixelated;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            width: 850px;
+            border: 1px solid #fff;
+            background: #000;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* VIOLENT ACCUROTATE: 4s high-velocity loop */
+        @keyframes violent-accurotate {
+            0% { transform: translate(-50%, -50%) perspective(600px) rotate3d(1, 1, 1, 0deg) scale(1) skew(0deg); filter: hue-rotate(0deg); }
+            50% { transform: translate(-50%, -50%) perspective(600px) rotate3d(-1, 1, -1, 180deg) scale(0.7) skew(-10deg); filter: hue-rotate(180deg) invert(100%); }
+            100% { transform: translate(-50%, -50%) perspective(600px) rotate3d(1, 1, 1, 360deg) scale(1) skew(0deg); filter: hue-rotate(360deg); }
+        }
+
+        .accurotate-active {
+            animation: violent-accurotate 4s linear infinite !important;
+            transform-style: preserve-3d;
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            margin: 0 !important;
+            z-index: 9999;
+        }
+
+        /* Clean Badge Layout - Borders Removed */
+        .badge-grid a {
+            display: inline-block;
+            background: transparent !important;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+            border: none !important; /* Force border removal on links */
+        }
+
+        .badge-grid img {
+            width: 88px;
+            height: 31px;
+            border: none !important; /* Remove borders to prevent clipping */
+            display: block;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 5px;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+        .nav-link:hover { background: #fff; color: #000; }
+
+        marquee { background: #fff; color: #000; font-weight: bold; text-transform: uppercase; padding: 2px 0; }
+        .hidden { display: none; }
+
+        a { color: #fff; text-decoration: underline; }
+        a:hover { background: transparent; text-decoration: none; }
+
+        .file-table tr { border-bottom: 1px solid #222; }
+        .file-table tr:hover { background: #111; }
+    </style>
+</head>
+<body>
+
+    <div id="site-wrapper" class="main-container">
+        <header class="border-b border-white p-5 text-center">
+            <h1 class="text-3xl tracking-[12px] font-bold uppercase">Raptorbytes</h1>
+            <p class="text-[10px] mt-2 opacity-70">NIXOS 25.11 (XANTUSIA) // KERNEL: 6.x // X86_64</p>
+        </header>
+
+        <marquee id="system-marquee" scrollamount="12">STATION: RAPTORBYTES // ENVIRONMENT: NIXOS // STATUS: NOMINAL</marquee>
+
+        <div class="flex border-t border-white">
+            <nav class="w-48 border-r border-white p-4 space-y-2">
+                <span class="text-xs font-bold bg-white text-black px-1">DIR_LIST</span>
+                <div onclick="showPage('index')" class="nav-link">> INDEX</div>
+                <div onclick="showPage('files')" class="nav-link">> FILES</div>
+                <div onclick="showPage('source')" class="nav-link">> SOURCE</div>
+                <div onclick="showPage('github')" class="nav-link">> GITHUB</div>
+
+                <div class="pt-6">
+                    <span class="text-xs font-bold bg-white text-black px-1">PROTOCOL</span>
+                    <div class="mt-2 text-center">
+                        <img src="https://electron271.gay/88x31/accurotate.webp"
+                             alt="Accurotate"
+                             onclick="toggleAccurotate()"
+                             style="cursor: pointer; border: none; width: 88px; height: 31px;">
+                    </div>
+                </div>
+            </nav>
+
+            <main class="flex-1 p-6 min-h-[400px]">
+
+                <section id="page-index">
+                    <h2 class="text-xl mb-4 border-b border-white inline-block">root@raptorbytes:~$</h2>
+                    <p class="text-sm mb-6 leading-relaxed">
+                        Welcome to Raptorbytes, a product of RTS.
+                    </p>
+                    <div class="border border-white p-2">
+                        <div class="text-[10px] mb-2 opacity-50 font-bold">LINK_EXCHANGE</div>
+                        <div class="grid grid-cols-4 sm:grid-cols-5 gap-2 badge-grid">
+                            <a href="https://grainware.org" target="_blank">
+                                <img src="https://electron271.gay/88x31/grain.webp" alt="grain">
+                            </a>
+                            <a href="https://electron271.gay" target="_blank">
+                                <img src="https://electron271.gay/88x31/badgev1.webp" alt="electron271">
+                            </a>
+                            <a href="https://www.gov.uk/" target="_blank">
+                                <img src="https://electron271.gay/88x31/britain.webp" alt="britain">
+                            </a>
+                            <a href="https://electron271.gay" target="_blank">
+                                <img src="https://electron271.gay/88x31/aga.webp" alt="aga">
+                            </a>
+
+                            <img src="https://88x31.kate.pet/companion_cube.gif" height="31" />
+
+                            <a href="https://grainware.org" target="_blank">
+                                <img src="https://electron271.gay/88x31/poweredbygrainware.webp" alt="grainware">
+                            </a>
+                            <a href="https://sx7n8.tech" target="_blank">
+                                <img src="https://sx7n8.tech/moon.png" alt="pinkfloyd">
+                            </a>
+
+                            <img src="https://88x31.kate.pet/aperture_labs.jpg" alt="aperture">
+                            <img src="https://88x31.kate.pet/madeon_linux.gif" alt="linux" />
+                            <a href="https://heckscaper.com"><img src="https://88x31.kate.pet/hs8831_d.gif" height="31" /></a>
+                            <img src="https://88x31.kate.pet/glados.jpg" height="31" />
+                            <a href="https://web.archive.org/web/20110513011151/http://graphics.rootmode.com/"><img src="https://88x31.kate.pet/button-120x60-gnu-2.png" height="31" /></a>
+                            <img src="https://88x31.kate.pet/e-scp.gif" height="31" />
+                            <img src="https://88x31.kate.pet/minedeeznuts.png" height="31" />
+                            <img src="https://88x31.kate.pet/firefox_now.png" height="31" />
+                            <img src="https://88x31.kate.pet/gamecube.png" height="31" />
+                            <img src="https://88x31.kate.pet/sun.gif" height="31" />
+                            <img src="https://88x31.kate.pet/winxp.gif" height="31" />
+                            <img src="https://cyber.dabamos.de/88x31/grapheneos.gif" height="31" />
+                            <img src="https://yesterhost.neocities.org/archive/buttons/button148.gif" height="31" />
+                            <img src="https://yesterhost.neocities.org/archive/buttons/button139.png" height="31" />
+                            <img src="https://yoohoosearch.neocities.org/neocities-buttons/neocities3.gif" height="31" />
+                            <img src="https://anlucas.neocities.org/aol_sucks02.gif" height="31" />
+                            <img src="https://yesterhost.neocities.org/archive/buttons/button170.gif" height="31" />
+                            <img src="https://capstasher.neocities.org/88x31Buttons/2001.gif" height="31" />
+
+
+                        </div>
+                    </div>
+                </section>
+
+                <section id="page-files" class="hidden">
+                    <h2 class="text-xl mb-4 border-b border-white inline-block">root@raptorbytes:~/files$</h2>
+                    <table class="w-full text-xs text-left file-table">
+                        <tr class="bg-white text-black font-bold">
+                            <th class="p-1">NAME</th>
+                            <th class="p-1">VERSION</th>
+                        </tr>
+                        <tr><td class="p-1">modules/</td><td class="p-1">v2</td></tr>
+                        <tr><td class="p-1">profile/</td><td class="p-1">stable</td></tr>
+                        <tr><td class="p-1">waybar/</td><td class="p-1">revB</td></tr>
+                        <tr><td class="p-1">README.md</td><td class="p-1">v2</td></tr>
+                        <tr><td class="p-1">compose.nix</td><td class="p-1">v2</td></tr>
+                        <tr><td class="p-1">flake.lock</td><td class="p-1">v2.2.1</td></tr>
+                        <tr><td class="p-1">flake.nix</td><td class="p-1">v2.2.1</td></tr>
+                    </table>
+                </section>
+
+                <section id="page-source" class="hidden">
+                    <h2 class="text-xl mb-4 border-b border-white inline-block">root@raptorbytes:~/specs$</h2>
+                    <div class="text-xs space-y-3">
+                        <div class="flex justify-between border-b border-zinc-800 pb-1">
+                            <span class="opacity-50">PLATFORM:</span>
+                            <span>x86_64-linux</span>
+                        </div>
+                        <div class="flex justify-between border-b border-zinc-800 pb-1">
+                            <span class="opacity-50">DISTRO:</span>
+                            <span>NixOS 25.11 (Xantusia)</span>
+                        </div>
+                        <div class="flex justify-between border-b border-zinc-800 pb-1">
+                            <span class="opacity-50">SYSTEM:</span>
+                            <span>Stable</span>
+                        </div>
+                        <div class="flex justify-between border-b border-zinc-800 pb-1">
+                            <span class="opacity-50">COMPILER:</span>
+                            <span>rustc / clang / nix-build</span>
+                        </div>
+                        <div class="mt-6 p-2 bg-zinc-900 border border-zinc-700 italic">
+                            "Everything is a flake if you try hard enough."
+                        </div>
+                    </div>
+                </section>
+
+                <section id="page-github" class="hidden">
+                    <h2 class="text-xl mb-4 border-b border-white inline-block">root@raptorbytes:~/git$</h2>
+                    <div class="text-sm">
+                        <p class="mb-4 opacity-70 text-xs">QUERYING REMOTE_REPOS...</p>
+                        <div class="p-4 border border-white bg-zinc-950 inline-block">
+                            <div class="flex items-center gap-4">
+                                <div class="text-2xl font-bold">[REP]</div>
+                                <div>
+                                    <a href="https://github.com/ArcoNightshade/LyonOS-V2" target="_blank" class="text-lg font-bold">LyonOS-v2</a>
+                                    <p class="text-[10px] mt-1 opacity-60 italic">Cutting edge flake for a cutting edge developer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <footer class="p-2 border-t border-white text-[9px] text-center opacity-40 uppercase">
+            NixOS Xantusia Deployment // Lyon // 2026
+        </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('main section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById('page-' + pageId).classList.remove('hidden');
+        }
+
+        function toggleAccurotate() {
+            const wrapper = document.getElementById('site-wrapper');
+            wrapper.classList.toggle('accurotate-active');
+            const marquee = document.getElementById('system-marquee');
+
+            if(wrapper.classList.contains('accurotate-active')) {
+                marquee.innerText = "WARNING: ACCUROTATE CRITICAL VELOCITY // SYSTEM INSTABILITY DETECTED";
+            } else {
+                marquee.innerText = "STATION: RAPTORBYTES // ENVIRONMENT: NIXOS // STATUS: NOMINAL";
+            }
+        }
+    </script>
+</body>
+</html>
